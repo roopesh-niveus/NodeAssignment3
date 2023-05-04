@@ -3,6 +3,8 @@
 */
 
 const express = require("express");
+require('dotenv').config();
+const mongodb_uri = process.env.MONGODB_URI;
 const app = express();
 const mongoose = require("mongoose");
 const User = require("./modules/user");  //  importing Shcema

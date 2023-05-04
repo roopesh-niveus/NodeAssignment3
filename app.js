@@ -4,11 +4,13 @@
 
 const app= require('./server');
 const mongoose = require("mongoose");
+require('dotenv').config();
+const mongodb_uri = process.env.MONGODB_URI;
 
 // conection to database
 mongoose
   .connect(
-    "mongodb+srv://roopz:Qwerty@cluster0.vdi14cr.mongodb.net/user?retryWrites=true&w=majority"
+    `${mongodb_uri}`
   )
   .then(() => {
     console.log("Connected to db");
@@ -21,3 +23,5 @@ mongoose
   });
 
   module.exports = app;
+
+
